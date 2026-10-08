@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FFE3FC;
+  --color-bg-nav: #FFF2FB;
+  --color-text-primary: #0D0B0C;
+  --color-input: #FFFFFF;
+  --color-border: #0D0B0C;
+  --color-primary: #FF8AF2;
+}
+
+html {
+  background-color: var(--color-bg);
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+}
