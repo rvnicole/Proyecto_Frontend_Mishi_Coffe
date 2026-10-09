@@ -10,3 +10,8 @@ export type CancelOrderType = {
     order: OrderType["_id"],
     description: string
 }
+
+export type UpdateStatusOrderType = {
+    orderId: OrderType["_id"],
+    status: OrderType["status"]
+}
