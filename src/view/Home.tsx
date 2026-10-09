@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { storeOrders } from "../store";
 import { obtenerOrdenes } from "../api/orders";
-import Load from "../components/Load";
+import Load from "../components/ui/Load";
 import Orders from "../components/orders/Orders";
 import ErrorMessage from "../components/ErrorMessage";
 
@@ -16,11 +16,12 @@ export default function Home() {
             if (!result.success) throw new Error(result.error.join(", "));
             return result.data;
         },
-        refetchInterval: 30_000
+        refetchInterval: 30_000,
+        refetchIntervalInBackground: true,
     });
 
     if (isLoading) return (
-        <Load className="mt-20" classNameIcon="size-12 m-auto" />
+        <Load className="mt-20" classNameIcon="size-12 m-auto text-primary" />
     );
 
     if(isError) return (

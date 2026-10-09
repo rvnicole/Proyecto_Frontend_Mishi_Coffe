@@ -8,7 +8,7 @@ type LoadProps = {
 export default function Load({className, classNameIcon}: LoadProps) {
     return (
         <div className={`${className}`}>
-            <LoaderCircle className={`text-primary animate-spin ${classNameIcon}`} />
+            <LoaderCircle className={`animate-spin ${classNameIcon}`} />
         </div>
     )
 }

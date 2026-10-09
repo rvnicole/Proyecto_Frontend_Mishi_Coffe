@@ -1,6 +1,7 @@
-import { Calendar, Coffee } from "lucide-react";
+import UpdateStatusOrder from "./UpdateStatusOrder";
 import StatusOrder from "./StatusOrder";
-import OptionsOrder from "./OptionsOrder";
+import CancelOrder from "./CancelOrder";
+import { Calendar, Coffee } from "lucide-react";
 import { StatusColor } from "../../data/lists";
 import { formatearMoneda } from "../../utils/format";
 import type { OrderType } from "../../types";
@@ -63,7 +64,10 @@ export default function CardOrder({ order }: CardOrderProps) {
                     </p>
                 </div>
 
-                <OptionsOrder orderId={order._id} status={order.status} />   
+                <div className="grid grid-cols-2 gap-2">
+                    <CancelOrder orderId={order._id} status={order.status}/>
+                    <UpdateStatusOrder orderId={order._id} status={order.status}/>
+                </div>
             </div>
         </div>
     )

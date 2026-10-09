@@ -1,6 +1,6 @@
 import { api } from "../config/api";
 import { OrderShema } from "../schemas";
-import type { ResponseOrdersType } from "../types";
+import type { CancelOrderType, OrderType, ResponseOrdersType } from "../types";
 
 export const obtenerOrdenes = async (startDate: string, endDate: string) : Promise<ResponseOrdersType> => {
     try {
@@ -14,10 +14,25 @@ export const obtenerOrdenes = async (startDate: string, endDate: string) : Promi
             return { success: false, error: errores}
         }
 
-        return { success: true, data: orders.data };;
+        return { success: true, data: orders.data };
     }
     catch(error) {
         console.log("Error al obtener las ordenes: ", error);
         return { success: false, error: ["Error al obtener las ordenes"] };
+    }
+}
+
+export const cancelOrder = async (data: CancelOrderType) => {
+    try {
+        console.log(data);
+        
+        const url = "/orders/cancel-order";
+        const result = await api.post(url, data);
+
+        console.log(result.data);
+    }
+    catch(error) {
+        console.log("Error al cancelar la orden: ", error);
+        return { success: false, error: ["Error al cancelar la orden"] };
     }
 }

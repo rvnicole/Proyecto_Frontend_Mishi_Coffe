@@ -5,3 +5,8 @@ export type OrderType = z.infer<typeof OrderShema>;
 export type StatusType = z.infer<typeof StatusSchema>;
 
 export type ResponseOrdersType = z.infer<typeof ResponseOrders>;
+
+export type CancelOrderType = {
+    order: OrderType["_id"],
+    description: string
+}
