@@ -2,11 +2,17 @@
 
 @theme {
   --color-bg: #FFE3FC;
-  --color-bg-nav: #FFF2FB;
+  --color-bg-nav: #FFFFFF;
   --color-text-primary: #0D0B0C;
+  --color-text-secondary: #0069A8;
   --color-input: #FFFFFF;
+  --color-bg-card: #FFF2FB;
+  --color-card: #FFFFFF;
   --color-border: #0D0B0C;
   --color-primary: #FF8AF2;
+  --color-muted: #735C68;
+  --color-bg-des: #DFF2FE;
+  --color-destructive: #FB2C36;
 }
 
 html {

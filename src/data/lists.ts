@@ -1,4 +1,6 @@
-export const category_emojis = {
+import type { OrderType } from "../types";
+
+export const categoryEmojis = {
   "Cafés": "☕",
   "Capuchinos": "🥤",
   "Chocolates": "🍫",
@@ -8,7 +10,7 @@ export const category_emojis = {
   "Galletas": "🍪"
 };
 
-export const category_orders = [
+export const categoryOrders = [
     "Cafés", 
     "Capuchinos", 
     "Chocolates", 
@@ -18,7 +20,7 @@ export const category_orders = [
     "Galletas"
 ];
 
-export const status_orders = [
+export const statusOrders = [
     "Pendiente",
     "Confirmado",
     "En preparación",
@@ -26,3 +28,12 @@ export const status_orders = [
     "Entregado",
     "Cancelado"
 ];
+
+export const StatusColor: Record<OrderType["status"], string>= {
+    "Pendiente": "yellow-500",
+    "Confirmado": "lime-500",
+    "En preparación": "purple-500",
+    "Listo": "sky-500",
+    "Entregado": "primary",
+    "Cancelado": "slate-500"
+}

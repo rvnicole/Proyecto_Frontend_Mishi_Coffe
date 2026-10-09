@@ -1,14 +1,14 @@
 import z from "zod";
-import { category_orders, status_orders } from "../data/lists";
+import { categoryOrders, statusOrders } from "../data/lists";
 
-export const StatusSchema = z.literal(status_orders);
+export const StatusSchema = z.literal(statusOrders);
 
 export const ProductSchema = z.object({
     _id: z.string(),
     name: z.string(),
     price: z.number(),
     description: z.string(),
-    category: z.literal(category_orders)
+    category: z.literal(categoryOrders)
 });
 
 export const ItemOrderSchema = z.object({
@@ -25,7 +25,17 @@ export const OrderShema = z.object({
     note: z.string(),
     totalAmount: z.number(),
     status: StatusSchema,
-    startDate: z.string(),
-    endDate: z.string(),
-    items: z.array(ItemOrderSchema)
+    items: z.array(ItemOrderSchema),
+    createdAt: z.string()
 });
+
+export const ResponseOrders = z.discriminatedUnion("success", [
+    z.object({
+        success: z.literal(true),
+        data: z.array(OrderShema),
+    }),
+    z.object({
+        success: z.literal(false),
+        error: z.array(z.string()),
+    }),
+]);
