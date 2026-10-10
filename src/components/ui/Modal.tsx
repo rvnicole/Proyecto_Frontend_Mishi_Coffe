@@ -20,12 +20,12 @@ export default function Modal({ open, onClose, children }: ModalProps) {
                 onClick={onClose}
             />
 
-            <div className="bg-card relative max-h-[90%] border-2 border-primary p-6 w-full max-w-md shadow-xl mx-2 rounded-xl">
+            <div className="bg-card relative max-h-[90%] border-2 border-primary p-6 w-full max-w-md md:max-w-xl shadow-xl mx-2 rounded-xl">
                 
                 {children}
     
                 <button
-                    className="absolute top-3 right-3 text-text-primary"
+                    className="absolute top-3 right-3 text-text-primary hover:bg-bg p-1 rounded-full"
                     onClick={onClose}
                 >
                     <X className="h-4 w-4 cursor-pointer"/>

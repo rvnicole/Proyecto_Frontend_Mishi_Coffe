@@ -14,7 +14,7 @@ export default function Orders({ orders }: OrdersProps) {
         : orders;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filterOrders.map((order) => (
                 <CardOrder key={order._id} order={order} />
             ))}

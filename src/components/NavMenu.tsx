@@ -12,7 +12,7 @@ export default function NavMenu() {
                 <Filters />
 
                 <div>
-                    User
+                    
                 </div>
             </div>
         </nav>
