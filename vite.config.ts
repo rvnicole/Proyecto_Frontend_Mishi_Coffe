@@ -7,4 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    host: true, // Permite que Vite escuche en 0.0.0.0 (no solo en localhost)
+    allowedHosts: true, // Permite cualquier dominio/túnel de Cloudflare
+  }
 })
